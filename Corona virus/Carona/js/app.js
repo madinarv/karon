@@ -5,6 +5,7 @@ btn.onclick=function () {
     .then(data => {
         let datalist = ''
         data.summary.forEach(countries => {
+            console.log(countries);
             datalist+=` 
             <tbody>
             <tr>
@@ -40,6 +41,12 @@ function Search() {
             `
         }    
         })
+        if(count === 0) {
+            document.querySelector('.page_404').classList.remove('d-none')
+           }
+           else{
+            document.querySelector('.page_404').classList.add('d-none')
+           }
         document.getElementById('tbody').innerHTML=datalist
         })
        } 

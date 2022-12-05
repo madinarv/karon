@@ -1,4 +1,4 @@
-let btn = document.querySelector('#btn')
+
 btn.onclick=function (){
     let value = document.querySelector('#btn').value;
     fetch('https://api.covid19api.com/summary')
@@ -6,6 +6,7 @@ btn.onclick=function (){
     .then(data => {
         let datalist = ''
          data.Countries.forEach(countries => {
+            console.log(countries);
             if (countries.TotalDeaths>10000) {
             datalist+=` 
             <tbody>
